@@ -48,7 +48,7 @@ const CoffeeForm = ({ isAuthenticated }: { isAuthenticated: boolean }) => {
       setGlobalData(newGlobalData);
       // persist the data in the firebase firestore
       const userRef = doc(db, "users", globalUser!.uid);
-      const res = await setDoc(
+      await setDoc(
         userRef,
         {
           [timestamp]: newData,

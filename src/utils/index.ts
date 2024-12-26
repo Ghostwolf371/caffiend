@@ -260,8 +260,7 @@ export function calculateCoffeeStats(
   }
 
   const days = Object.keys(dailyStats).length;
-  const dailyCaffeine: string[] = [];
-  for (const [date, stats] of Object.entries(dailyStats)) {
+  for (const [, stats] of Object.entries(dailyStats)) {
     if (stats.caffeine > 0) {
       totalCaffeine += stats.caffeine;
       totalDaysWithCoffee += 1; // Count days when caffeine was consumed
